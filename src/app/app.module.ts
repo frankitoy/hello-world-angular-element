@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Injector, DoBootstrap } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { Page1Component } from './page1/page1.component';
@@ -15,7 +16,12 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: ''
+    }
+  ],
   entryComponents: [HelloWorldComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
