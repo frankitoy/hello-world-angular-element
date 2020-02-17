@@ -1,0 +1,2 @@
+#!/bin/sh
+ng build hello-world-angular-element --prod --output-hashing=none && cat dist/hello-world-angular-element/runtime.js dist/hello-world-angular-element/polyfills-es5.js dist/hello-world-angular-element/main.js > preview/hello-world-angular-element.js
